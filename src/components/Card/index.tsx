@@ -1,4 +1,4 @@
-import { CardComp } from "../Card/card.styled";
+import { CardComp } from "./card.styled";
 import { Stack } from "../atoms.styled";
 import { useHistory } from "react-router-dom";
 

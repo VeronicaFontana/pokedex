@@ -1,3 +1,4 @@
+import React from "react";
 import { Stack } from "../atoms.styled";
 
 export default function EvolutionCard(props){

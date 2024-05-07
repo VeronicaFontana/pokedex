@@ -1,3 +1,4 @@
+import React from "react";
 import { Stack } from "../atoms.styled";
 import EvolutionCard from "../EvolutionCard";
 

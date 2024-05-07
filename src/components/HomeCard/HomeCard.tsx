@@ -4,6 +4,7 @@ import { Stack } from "../atoms.styled";
 import Loader, { LoaderVariants } from "../Loader/Loader";
 import { useHistory } from "react-router-dom";
 import { usePokemonDescription, usePokemonSpriteUrl, usePokemonType } from "../../hook/swr";
+import React from "react";
 
 export default function HomeCard(props) {
     const { id, name, width, onClick} = props;

@@ -6,6 +6,10 @@
   "main": "src/index.js",
   "dependencies": {
     "@babel/runtime": "^7.13.8",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.10",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.1.2",
@@ -15,7 +19,7 @@
     "swr": "^2.2.5"
   },
   "devDependencies": {
-    "typescript": "^3.2.1"
+    "typescript": "^3.9.10"
   },
   "scripts": {
     "start": "react-scripts start",

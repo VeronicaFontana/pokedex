@@ -2,6 +2,7 @@ import {BarChart, Bar, XAxis} from "recharts";
 import { Stack } from "../atoms.styled";
 import { usePokemonAgility, usePokemonDescription } from "../../hook/swr";
 import Loader from "../Loader/Loader";
+import React from "react";
 
 export default function Stats(props){
     const {id} = props;

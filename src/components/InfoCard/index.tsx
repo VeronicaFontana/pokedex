@@ -1,5 +1,5 @@
+import React from "react";
 import { usePokemonAgility, usePokemonDescription } from "../../hook/swr";
-import Loader from "../Loader/Loader";
 import { Stack } from "../atoms.styled";
 import { Column } from "../atoms.styled";
 

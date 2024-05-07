@@ -1,4 +1,5 @@
-import { Search } from "../SearchBar/search.styled.js";
+import React from "react";
+import { Search } from "./search.styled.js";
 
 export default function SearchBar({ setSearch }) {
   return (

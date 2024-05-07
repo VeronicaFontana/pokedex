@@ -1,5 +1,6 @@
 import { css, keyframes } from 'styled-components/macro';
 import styled from 'styled-components';
+import React from 'react';
 
 export const LoaderVariants = {
     circle: "circle",
