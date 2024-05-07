@@ -9,15 +9,6 @@ import React from "react";
 export default function HomeCard(props) {
     const { id, name, width, onClick} = props;
 
-    function delay(time){
-        return new Promise( res => setTimeout(res, time) );
-    }
-
-    async function delay(url){
-        await delay(1000);
-        return url();
-    }
-
     const { imageUrl, isImageLoading } = usePokemonSpriteUrl(id);
     const { pokemonInfo, isInfoLoading } = usePokemonDescription(id);
     const { pokemonType, isTypeLoading } = usePokemonType(id);
@@ -45,7 +36,7 @@ export default function HomeCard(props) {
             >
             {
                 isImageLoading ?
-                <Loader variant="circle" />
+                <Loader variant="circle" width={undefined} height={undefined} />
                 :
                 <div style={{padding: "30px", borderRadius: "50%", border:"1px solid black", backgroundColor: "white"}}>
                     <img src={imageUrl} />
@@ -54,7 +45,7 @@ export default function HomeCard(props) {
             </Stack>
             <Stack flexDirection="row" justifyContent="space-evenly" alignItems="center" className="card__badges">
             { isTypeLoading ? 
-                <Loader variant="badge" />
+                <Loader variant="badge" width={undefined} height={undefined} />
                 :
                 pokemonType && pokemonType.length > 0 && 
                 pokemonType.map((item, index) => (

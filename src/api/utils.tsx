@@ -8,7 +8,7 @@
  * }>}
  */
 
-const delay = () => new Promise((res) => setTimeout(() => res(), 2000));
+const delay = () => new Promise<void>((res) => setTimeout(() => res(), 2000));
 
 export async function getPokemonList() {
   const data = await fetch(

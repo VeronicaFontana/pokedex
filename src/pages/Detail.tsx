@@ -14,7 +14,7 @@ export default function Detail() {
 
   const {name, id} = useParams();
 
-  const { pokemonInfo, isLoadingInfo } = usePokemonDescription(id);
+  const { pokemonInfo } = usePokemonDescription(id);
 
   return (
     <Stack justifyContent="space-between" gap="20px" className="container detail-box">

@@ -1,6 +1,7 @@
 import { CardComp } from "./card.styled";
 import { Stack } from "../atoms.styled";
 import { useHistory } from "react-router-dom";
+import React from "react";
 
 export default function Card(props) {
   const { id, name, image, type, color, width, onClick, pokedexNum } = props;
