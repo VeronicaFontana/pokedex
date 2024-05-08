@@ -1,7 +1,7 @@
 import React from "react";
-import { Search } from "./search.styled.js";
+import { Search } from "./search.styled";
 
-export default function SearchBar({ setSearch }) {
+export default function SearchBar({ setSearch }: { setSearch: React.Dispatch<React.SetStateAction<string>> }) {
   return (
     <Search
       type="text"
@@ -11,3 +11,5 @@ export default function SearchBar({ setSearch }) {
     />
   );
 }
+
+

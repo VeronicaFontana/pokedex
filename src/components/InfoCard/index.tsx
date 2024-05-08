@@ -3,11 +3,15 @@ import { usePokemonAgility, usePokemonDescription } from "../../hook/swr";
 import { Stack } from "../atoms.styled";
 import { Column } from "../atoms.styled";
 
-export default function InfoCard(props){
+interface IInfoCardProps{
+    id: string;
+}
+
+export default function InfoCard(props: IInfoCardProps){
     const { id } = props;
 
-    const { pokemonInfo, isInfoLoading } = usePokemonDescription(id);
-    const { pokemonAgility, isAgilityLoading } = usePokemonAgility(id);
+    const { pokemonInfo } = usePokemonDescription(id);
+    const { pokemonAgility } = usePokemonAgility(id);
 
     return(
         <Stack flexDirection="row" className="infoBoxDetail">

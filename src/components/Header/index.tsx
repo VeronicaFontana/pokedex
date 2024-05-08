@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HeaderComp } from "./header.styled.tsx";
+import { HeaderComp } from "./header.styled";
 import React from "react";
 
 export default function Header() {

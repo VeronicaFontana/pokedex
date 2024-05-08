@@ -7,12 +7,11 @@ import Stats from "../components/Stats";
 import Evolution from "../components/Evolution";
 import "../styles/styles.css";
 import HomeCard from "../components/HomeCard/HomeCard";
-import { getPokemonDescription } from "../api/utils";
 import { usePokemonDescription } from "../hook/swr";
 
 export default function Detail() {
 
-  const {name, id} = useParams();
+  const { name, id }: { name: string; id: string } = useParams();
 
   const { pokemonInfo } = usePokemonDescription(id);
 

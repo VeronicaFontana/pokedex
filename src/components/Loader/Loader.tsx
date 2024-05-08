@@ -19,7 +19,7 @@ const baseStyle = css`
     animation: ${animation} 3s infinite;
 `
 
-const Circle  = styled.div`
+const Circle = styled.div`
         padding: 30px;
         border-radius: 50%;
         border: 1px solid black;
@@ -42,9 +42,13 @@ const Rectangular  = styled.div`
     ${baseStyle}
 `
 
+interface ILoader{
+    variant: "circle" | "badge" | "rectangular";
+    width?: string;
+    height?: string;
+}
 
-
-export default function Loader({ variant, width, height }){
+export default function Loader({ variant, width, height } : ILoader){
     if(variant === 'circle') return <Circle />
     if(variant === 'badge') return <Badge />
     if(variant === 'rectangular') return <Rectangular width={width} height={height} />

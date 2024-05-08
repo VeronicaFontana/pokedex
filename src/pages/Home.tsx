@@ -1,20 +1,19 @@
-import React, { useEffect, useState, useMemo } from "react";
-import Card from "../components/Card";
+import React, { useState, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import { Stack } from "../components/atoms.styled";
 import "../styles/styles.css";
-import { usePokemonList, usePokemonDescription, usePokemonSpriteUrl, usePokemonAgility, usePokemonType } from "../hook/swr";
-import useSWR from "swr";
+import { usePokemonList } from "../hook/swr";
 import HomeCard from "../components/HomeCard/HomeCard";
+import { IPokemon } from "models/types";
 
 export default function Home(){
 
-  const {pokemonList} = usePokemonList();
+  const { pokemonList } = usePokemonList();
   
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
 
-  const filteredPokemon = useMemo(() => {
+  const filteredPokemon: IPokemon[] = useMemo(() => {
     return (pokemonList || [])
       .filter(pokemon =>
         pokemon.name.toLowerCase().includes(search.toLowerCase())
@@ -22,7 +21,7 @@ export default function Home(){
   }, [pokemonList, search]);
 
   let history = useHistory();
-  function handleClick(name, id){
+  function handleClick(name: string, id: string){
     history.push(`/detail/${name}/${id}`);
   }
 

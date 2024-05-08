@@ -6,8 +6,15 @@ import { useHistory } from "react-router-dom";
 import { usePokemonDescription, usePokemonSpriteUrl, usePokemonType } from "../../hook/swr";
 import React from "react";
 
-export default function HomeCard(props) {
-    const { id, name, width, onClick} = props;
+interface IHomeCardProps{ 
+    id: string;
+    name: string;
+    width: string;
+    onClick?: () => void; 
+}
+
+export default function HomeCard(props: IHomeCardProps) {
+    const { id, name, width, onClick } = props;
 
     const { imageUrl, isImageLoading } = usePokemonSpriteUrl(id);
     const { pokemonInfo, isInfoLoading } = usePokemonDescription(id);
@@ -36,7 +43,7 @@ export default function HomeCard(props) {
             >
             {
                 isImageLoading ?
-                <Loader variant="circle" width={undefined} height={undefined} />
+                <Loader variant="circle" />
                 :
                 <div style={{padding: "30px", borderRadius: "50%", border:"1px solid black", backgroundColor: "white"}}>
                     <img src={imageUrl} />
@@ -45,7 +52,7 @@ export default function HomeCard(props) {
             </Stack>
             <Stack flexDirection="row" justifyContent="space-evenly" alignItems="center" className="card__badges">
             { isTypeLoading ? 
-                <Loader variant="badge" width={undefined} height={undefined} />
+                <Loader variant="badge" />
                 :
                 pokemonType && pokemonType.length > 0 && 
                 pokemonType.map((item, index) => (
