@@ -4,13 +4,17 @@ import { usePokemonAgility, usePokemonDescription } from "../../hook/swr";
 import Loader from "../Loader/Loader";
 import React from "react";
 
-export default function Stats(props){
+interface iStatsProps{
+    id: string;
+}
+
+export default function Stats(props: iStatsProps){
     const {id} = props;
 
     const { pokemonAgility, isAgilityLoading } = usePokemonAgility(id);
     const { pokemonInfo } = usePokemonDescription(id);
 
-    let mappedValue;
+    let mappedValue: { name: string; back: number; base_stats: string }[] ;
     if(pokemonAgility?.stats){
         const config = {
             hp: {
@@ -50,8 +54,15 @@ export default function Stats(props){
         })
     }
     
+    interface IRenderCustomizedLabel{
+        x:  number;
+        y: number;
+        value: string;
+        width: number;
+        height: number;
+    }
 
-    const renderCustomizedLabel = ({x, y, value, width, height}) => {
+    const renderCustomizedLabel = ({x, y, value, width, height}: IRenderCustomizedLabel) => {
         return (
             <text x={x + width/2} y={y + height} fill="white" textAnchor="middle" dominantBaseline="central" dy="-10">
                 {value}
