@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { CardComp } from "../Card/card.styled";
+import { CardComp } from "../HomeCard/cardComp.styled";
 import { Stack } from "../atoms.styled";
 import Loader, { LoaderVariants } from "../Loader/Loader";
 import { useHistory } from "react-router-dom";
